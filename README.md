@@ -51,7 +51,7 @@ ReactDOM.render(<App />, document.getElementById('app'));
 ## Props
 
 * value (*string*) - the raw markdown that will be converted to html (**required**)
-* onChange (*string*) - css classes to add to the component (**required**).
+* onChange (*function*) - css classes to add to the component (**required**).
 
 ## Contributing
 
