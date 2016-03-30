@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import MarkdownEditor from '../src';
+import '../src/react-markdown-editor.styl';
 
 import './app.styl';
 

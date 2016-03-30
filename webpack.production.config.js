@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const StatsPlugin = require('stats-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
 module.exports = {
     entry: [
@@ -14,12 +15,8 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.css$/,
-                loaders: ['style', 'css'],
-            },
-            {
                 test: /\.styl$/,
-                loaders: ['style', 'css', 'stylus'],
+                loaders: ['style', 'css', 'postcss', 'stylus'],
             },
             {
                 test: /\.jsx?$/,
@@ -47,4 +44,5 @@ module.exports = {
     resolve: {
         extensions: ['', '.js', '.jsx'],
     },
+    postcss: () => [autoprefixer],
 };

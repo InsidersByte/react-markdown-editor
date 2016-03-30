@@ -22,6 +22,7 @@ npm install @InsidersByte/react-markdown-editor
 import React from 'react';
 import ReactDOM from 'react-dom';
 import MarkdownEditor from 'react-markdown-editor';
+import 'react-markdown-editor/css/react-markdown-editor.css';
 
 class App extends React.Component {
     constructor() {
