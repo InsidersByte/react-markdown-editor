@@ -1,5 +1,5 @@
 {
-  "name": "@InsidersByte/react-markdown-editor",
+  "name": "@insidersbyte/react-markdown-editor",
   "version": "0.1.0",
   "description": "React Markdown editor",
   "main": "dist/index.js",
