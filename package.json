@@ -34,7 +34,6 @@
     "react": ">=0.14.8"
   },
   "dependencies": {
-    "marked": "^0.3.5",
     "react-markdown-renderer": "^0.1.2",
     "react-textarea-autosize": "^3.3.0"
   },
