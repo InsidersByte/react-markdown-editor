@@ -5,15 +5,17 @@
 [![peerDependency Status](https://david-dm.org/insidersbyte/react-markdown-editor/peer-status.svg)](https://david-dm.org/insidersbyte/react-markdown-editor#info=peerDependencies)
 [![devDependency Status](https://david-dm.org/insidersbyte/react-markdown-editor/dev-status.svg)](https://david-dm.org/insidersbyte/react-markdown-editor#info=devDependencies)
 
+[![NPM](https://nodei.co/npm/@insidersbyte/react-markdown-editor.png?downloads=true&downloadRank=true)](https://nodei.co/npm/@insidersbyte/react-markdown-editor/)
+
 [React](http://facebook.github.io/react) Markdown editor, built with [react-markdown-renderer](https://github.com/insidersbyte/react-markdown-renderer).
 
 ## Demo
-http://insidersbyte.github.io/react-markdown-renderer
+http://insidersbyte.github.io/react-markdown-editor
 
 ## Installing
 
 ```bash
-npm install @InsidersByte/react-markdown-editor
+npm install @insidersbyte/react-markdown-editor
 ```
 
 ## Usage
@@ -21,8 +23,8 @@ npm install @InsidersByte/react-markdown-editor
 ```js
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MarkdownEditor from 'react-markdown-editor';
-import 'react-markdown-editor/css/react-markdown-editor.css';
+import MarkdownEditor from '@insidersbyte/react-markdown-editor';
+import '@insidersbyte/react-markdown-editor/dist/css/react-markdown-editor.css';
 
 class App extends React.Component {
     constructor() {
