@@ -11,7 +11,7 @@ class App extends React.Component {
         super();
 
         this.state = {
-            markdown: '# This is an H1  \n## This is an H2  \n###### This is an H6',
+            markdown: '# This is a H1  \n## This is a H2  \n###### This is a H6',
         };
 
         this.updateMarkdown = this.updateMarkdown.bind(this);

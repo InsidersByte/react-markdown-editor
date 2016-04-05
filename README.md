@@ -2,7 +2,8 @@
 
 [![npm (scoped)](https://img.shields.io/npm/v/@insidersbyte/react-markdown-editor.svg)](https://www.npmjs.com/package/@insidersbyte/react-markdown-editor)  
 [![Build Status](https://travis-ci.org/InsidersByte/react-markdown-editor.svg)](https://travis-ci.org/InsidersByte/react-markdown-editor)
-[![Coverage Status](https://coveralls.io/repos/github/InsidersByte/react-markdown-editor/badge.svg?branch=master)](https://coveralls.io/github/InsidersByte/react-markdown-editor?branch=master)  
+[![Coverage Status](https://coveralls.io/repos/github/InsidersByte/react-markdown-editor/badge.svg?branch=master)](https://coveralls.io/github/InsidersByte/react-markdown-editor?branch=master)
+[![Code Climate](https://codeclimate.com/github/InsidersByte/react-markdown-editor/badges/gpa.svg)](https://codeclimate.com/github/InsidersByte/react-markdown-editor)  
 [![Dependency Status](https://david-dm.org/insidersbyte/react-markdown-editor.svg)](https://david-dm.org/insidersbyte/react-markdown-editor)
 [![peerDependency Status](https://david-dm.org/insidersbyte/react-markdown-editor/peer-status.svg)](https://david-dm.org/insidersbyte/react-markdown-editor#info=peerDependencies)
 [![devDependency Status](https://david-dm.org/insidersbyte/react-markdown-editor/dev-status.svg)](https://david-dm.org/insidersbyte/react-markdown-editor#info=devDependencies)
@@ -33,7 +34,7 @@ class App extends React.Component {
         super();
 
         this.state = {
-            markdown: '# This is an H1  \n## This is an H2  \n###### This is an H6',
+            markdown: '# This is a H1  \n## This is a H2  \n###### This is a H6',
         };
 
         this.updateMarkdown = this.updateMarkdown.bind(this);

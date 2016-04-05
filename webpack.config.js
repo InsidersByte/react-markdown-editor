@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     devtool: 'eval-source-map',
@@ -10,7 +11,7 @@ module.exports = {
         filename: 'bundle.js',
     },
     devServer: {
-        contentBase: 'pages',
+        contentBase: 'build',
     },
     module: {
         loaders: [
@@ -25,6 +26,13 @@ module.exports = {
             },
         ],
     },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: 'pages/index.html',
+            inject: 'body',
+            filename: 'index.html',
+        }),
+    ],
     resolve: {
         extensions: ['', '.js', '.jsx'],
     },
