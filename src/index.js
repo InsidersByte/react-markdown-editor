@@ -10,7 +10,21 @@ class MarkdownEditor extends React.Component {
     constructor(props) {
         super(props);
 
+        this.state = {
+            draggingOver: false,
+        };
+
+        this.onDragEnter = this.onDragEnter.bind(this);
+        this.onDragLeave = this.onDragLeave.bind(this);
         this.onImageDrop = this.onImageDrop.bind(this);
+    }
+
+    onDragEnter() {
+        this.setState({ draggingOver: true });
+    }
+
+    onDragLeave() {
+        this.setState({ draggingOver: false });
     }
 
     onImageDrop(event) {
@@ -50,15 +64,20 @@ class MarkdownEditor extends React.Component {
     }
 
     render() {
+        const textAreaClassName = this.state.draggingOver ? 'dragover' : null;
+
         return (
             <div className="markdown-editor">
                 <div>
                     <h2>Markdown</h2>
 
                     <TextArea
+                        className={textAreaClassName}
                         value={this.props.value}
                         onChange={this.props.onChange}
                         onDrop={this.onImageDrop}
+                        onDragEnter={this.onDragEnter}
+                        onDragLeave={this.onDragLeave}
                     />
                 </div>
 
