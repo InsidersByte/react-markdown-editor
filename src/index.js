@@ -32,6 +32,10 @@ class MarkdownEditor extends React.Component {
 
         this.setState({ draggingOver: false });
 
+        if (!this.props.onImageDrop || !this.props.onChange) {
+            return;
+        }
+
         const files = event.dataTransfer ? event.dataTransfer.files : event.target.files;
         const filesArray = [...files];
         const images = filesArray.filter(o => imageType.test(o.type));
@@ -100,11 +104,6 @@ MarkdownEditor.propTypes = {
     value: React.PropTypes.string.isRequired,
     onChange: React.PropTypes.func.isRequired,
     onImageDrop: React.PropTypes.func,
-};
-
-MarkdownEditor.defaultProps = {
-    onChange: () => {},
-    onImageDrop: () => {},
 };
 
 export default MarkdownEditor;
