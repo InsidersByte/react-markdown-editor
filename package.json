@@ -1,7 +1,7 @@
 {
   "name": "@insidersbyte/react-markdown-editor",
   "version": "0.1.1",
-  "description": "React Markdown editor with preview",
+  "description": "React Markdown editor with preview and drag and drop image support",
   "main": "dist/index.js",
   "files": [
     "dist"

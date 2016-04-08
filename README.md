@@ -10,7 +10,7 @@
 
 [![NPM](https://nodei.co/npm/@insidersbyte/react-markdown-editor.png?downloads=true&downloadRank=true)](https://nodei.co/npm/@insidersbyte/react-markdown-editor/)
 
-[React](http://facebook.github.io/react) Markdown editor, with drag and drop image support (at the moment it always adds the image to the end, regardless of where you drop it), built with [react-markdown-renderer](https://github.com/insidersbyte/react-markdown-renderer).
+[React](http://facebook.github.io/react) Markdown editor with preview and drag and drop image support (at the moment it always adds the image to the end, regardless of where you drop it), built with [react-markdown-renderer](https://github.com/insidersbyte/react-markdown-renderer).
 
 ## Demo
 http://insidersbyte.github.io/react-markdown-editor
