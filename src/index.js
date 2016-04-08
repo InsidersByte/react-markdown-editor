@@ -30,6 +30,8 @@ class MarkdownEditor extends React.Component {
     onImageDrop(event) {
         event.preventDefault();
 
+        this.setState({ draggingOver: false });
+
         const files = event.dataTransfer ? event.dataTransfer.files : event.target.files;
         const filesArray = [...files];
         const images = filesArray.filter(o => imageType.test(o.type));

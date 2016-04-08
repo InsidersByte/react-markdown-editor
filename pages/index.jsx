@@ -24,7 +24,7 @@ class App extends React.Component {
                     filename: file.name,
                     url: 'http://images.freeimages.com/images/previews/b56/hands-2-ok-hand-1241594.jpg',
                 });
-            }, 1000);
+            }, 3000);
         });
     }
 

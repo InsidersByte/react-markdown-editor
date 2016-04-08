@@ -1,7 +1,7 @@
 {
   "name": "@insidersbyte/react-markdown-editor",
   "version": "0.1.1",
-  "description": "React Markdown editor",
+  "description": "React Markdown editor with preview",
   "main": "dist/index.js",
   "files": [
     "dist"
