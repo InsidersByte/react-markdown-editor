@@ -32,13 +32,18 @@ class MarkdownEditor extends React.Component {
 
         this.setState({ draggingOver: false });
 
-        if (!this.props.onImageDrop || !this.props.onChange) {
+        if (!this.props.onImageDrop) {
             return;
         }
 
         const files = event.dataTransfer ? event.dataTransfer.files : event.target.files;
         const filesArray = [...files];
         const images = filesArray.filter(o => imageType.test(o.type));
+
+        if (images.length === 0) {
+            return;
+        }
+
         const imageFileNames = images.map(o => placeholderTemplate(o.name));
         const imagePlaceholders = imageFileNames.join('\n');
 

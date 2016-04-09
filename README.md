@@ -75,7 +75,7 @@ ReactDOM.render(<App />, document.getElementById('app'));
 ## Props
 
 * value (*string*) - the raw markdown that will be converted to html (**required**)
-* onChange (*function*) - called when a change is made
+* onChange (*function*) - called when a change is made (**required**)
 * onImageDrop (*function*) - called per image dropped on the textarea
 
 ## Contributing
