@@ -17,13 +17,28 @@ class App extends React.Component {
         this.updateMarkdown = this.updateMarkdown.bind(this);
     }
 
+    onImageDrop(file) {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve({
+                    filename: file.name,
+                    url: 'http://images.freeimages.com/images/previews/b56/hands-2-ok-hand-1241594.jpg',
+                });
+            }, 3000);
+        });
+    }
+
     updateMarkdown(event) {
         this.setState({ markdown: event.target.value });
     }
 
     render() {
         return (
-            <MarkdownEditor value={this.state.markdown} onChange={this.updateMarkdown} />
+            <MarkdownEditor
+                value={this.state.markdown}
+                onChange={this.updateMarkdown}
+                onImageDrop={this.onImageDrop}
+            />
         );
     }
 }

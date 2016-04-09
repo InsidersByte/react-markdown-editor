@@ -10,7 +10,7 @@
 
 [![NPM](https://nodei.co/npm/@insidersbyte/react-markdown-editor.png?downloads=true&downloadRank=true)](https://nodei.co/npm/@insidersbyte/react-markdown-editor/)
 
-[React](http://facebook.github.io/react) Markdown editor, built with [react-markdown-renderer](https://github.com/insidersbyte/react-markdown-renderer).
+[React](http://facebook.github.io/react) Markdown editor with preview and drag and drop image support (at the moment it always adds the image to the end, regardless of where you drop it), built with [react-markdown-renderer](https://github.com/insidersbyte/react-markdown-renderer).
 
 ## Demo
 http://insidersbyte.github.io/react-markdown-editor
@@ -31,24 +31,42 @@ import '@insidersbyte/react-markdown-editor/dist/css/react-markdown-editor.css';
 
 class App extends React.Component {
     constructor() {
-        super();
-
-        this.state = {
-            markdown: '# This is a H1  \n## This is a H2  \n###### This is a H6',
-        };
-
-        this.updateMarkdown = this.updateMarkdown.bind(this);
-    }
-
-    updateMarkdown(event) {
-        this.setState({ markdown: event.target.value });
-    }
-
-    render() {
-        return (
-            <MarkdownEditor value={this.state.markdown} onChange={this.updateMarkdown} />
-        );
-    }
+            super();
+    
+            this.state = {
+                markdown: '# This is a H1  \n## This is a H2  \n###### This is a H6',
+            };
+    
+            this.updateMarkdown = this.updateMarkdown.bind(this);
+        }
+    
+        onImageDrop(file) {
+            // This is where you would upload your files to whatever storage you are using
+            // You just need to return a promise with the original filename and the url of the uploaded file
+        
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve({
+                        filename: file.name,
+                        url: 'http://images.freeimages.com/images/previews/b56/hands-2-ok-hand-1241594.jpg',
+                    });
+                }, 3000);
+            });
+        }
+    
+        updateMarkdown(event) {
+            this.setState({ markdown: event.target.value });
+        }
+    
+        render() {
+            return (
+                <MarkdownEditor
+                    value={this.state.markdown}
+                    onChange={this.updateMarkdown}
+                    onImageDrop={this.onImageDrop}
+                />
+            );
+        }
 }
 
 ReactDOM.render(<App />, document.getElementById('app'));
@@ -57,7 +75,8 @@ ReactDOM.render(<App />, document.getElementById('app'));
 ## Props
 
 * value (*string*) - the raw markdown that will be converted to html (**required**)
-* onChange (*function*) - css classes to add to the component (**required**).
+* onChange (*function*) - called when a change is made (**required**)
+* onImageDrop (*function*) - called per image dropped on the textarea
 
 ## Contributing
 
