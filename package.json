@@ -16,6 +16,7 @@
     "build-pages": "npm run clean && NODE_ENV=production webpack --config ./webpack.production.config.js --progress --profile --colors",
     "jest": "jest",
     "lint": "eslint --ignore-path .gitignore .",
+    "lint-fix": "eslint --ignore-path .gitignore --fix .",
     "test": "npm run lint && npm run jest",
     "prepublish": "npm run build && npm test",
     "prepublish-pages": "npm run build-pages",
