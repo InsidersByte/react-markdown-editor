@@ -81,11 +81,11 @@ describe('MarkdownEditor', () => {
 
         describe('valid images, but no onImageDrop prop passed', () => {
             it('does not call onChange', () => {
-                expect(onChangeMock.mock.calls.length).toBe(0);
+                expect(onChangeMock).not.toBeCalled();
 
                 simulateDrop(validFile);
 
-                expect(onChangeMock.mock.calls.length).toBe(0);
+                expect(onChangeMock).not.toBeCalled();
             });
         });
 
@@ -93,14 +93,14 @@ describe('MarkdownEditor', () => {
             beforeEach(() => {
                 markdownEditor = generateMarkdownEditor(true);
 
-                expect(onChangeMock.mock.calls.length).toBe(0);
-                expect(onImageDropMock.mock.calls.length).toBe(0);
+                expect(onChangeMock).not.toBeCalled();
+                expect(onImageDropMock).not.toBeCalled();
             });
 
             describe('invalid files', () => {
                 afterEach(() => {
-                    expect(onChangeMock.mock.calls.length).toBe(0);
-                    expect(onImageDropMock.mock.calls.length).toBe(0);
+                    expect(onChangeMock).not.toBeCalled();
+                    expect(onImageDropMock).not.toBeCalled();
                 });
 
                 describe('no files passed', () => {
@@ -118,6 +118,8 @@ describe('MarkdownEditor', () => {
 
             describe('invalid response from onImageDrop', () => {
                 afterEach(() => {
+                    simulateDrop(validFile);
+
                     expect(onChangeMock.mock.calls.length).toBe(1);
                     expect(onChangeMock).toBeCalledWith({ target: { value: '\n![uploading image...]()' } });
 
@@ -128,21 +130,21 @@ describe('MarkdownEditor', () => {
                 describe('no filename', () => {
                     it('does not call onChange twice', () => {
                         onImageDropMock.mockReturnValueOnce({ url: 'url' });
-
-                        simulateDrop(validFile);
                     });
                 });
 
                 describe('no url', () => {
                     it('does not call onChange twice', () => {
                         onImageDropMock.mockReturnValueOnce({ filename: 'filename' });
-
-                        simulateDrop(validFile);
                     });
                 });
             });
 
             describe('one image passed', () => {
+                beforeEach(() => {
+                    onImageDropMock.mockReturnValueOnce(uploadedImage);
+                });
+
                 afterEach(() => {
                     expect(onChangeMock.mock.calls.length).toBe(1);
                     expect(onChangeMock).toBeCalledWith({ target: { value: '\n![uploading image...]()' } });
@@ -152,15 +154,11 @@ describe('MarkdownEditor', () => {
                 });
 
                 it('calls onChange and onImageDrop', () => {
-                    onImageDropMock.mockReturnValueOnce(uploadedImage);
-
                     simulateDrop(validFile);
                 });
 
                 describe('one image passed with event.target.files', () => {
                     it('calls onChange and onImageDrop', () => {
-                        onImageDropMock.mockReturnValueOnce(uploadedImage);
-
                         simulateDrop(validFile, false);
                     });
                 });
