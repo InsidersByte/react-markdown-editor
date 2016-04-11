@@ -7,24 +7,22 @@ import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
 import MarkdownEditor from '../../src';
 
-const value = '';
-const onChangeMock = jest.genMockFunction();
-const onImageDropMock = jest.genMockFunction();
-
 let markdownEditor;
 
+const value = '';
 const validFile = [{ type: 'image/jpeg', name: 'image' }];
 const invalidFile = [{ type: 'text/markdown', name: 'markdown' }];
 const uploadedImage = { url: 'url', filename: 'image' };
+
+const onChangeMock = jest.genMockFunction();
+const onImageDropMock = jest.genMockFunction();
 
 function generateMarkdownEditor(includeOnDropImage = false) {
     const markup = includeOnDropImage ?
         <MarkdownEditor value={value} onChange={onChangeMock} onImageDrop={onImageDropMock} /> :
         <MarkdownEditor value={value} onChange={onChangeMock} />;
 
-    return TestUtils.renderIntoDocument(
-        markup
-    );
+    return TestUtils.renderIntoDocument(markup);
 }
 
 function simulateDrop(files, useDataTransfer = true) {
@@ -146,8 +144,10 @@ describe('MarkdownEditor', () => {
                 });
 
                 afterEach(() => {
+                    // TODO: This should be two calls but having an issue with promises
                     expect(onChangeMock.mock.calls.length).toBe(1);
                     expect(onChangeMock).toBeCalledWith({ target: { value: '\n![uploading image...]()' } });
+                    // expect(onChangeMock).toBeCalledWith({ target: { value: '\n![image](url)' } });
 
                     expect(onImageDropMock.mock.calls.length).toBe(1);
                     expect(onImageDropMock).toBeCalledWith(validFile[0]);
