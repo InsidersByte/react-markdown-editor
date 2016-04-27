@@ -6,6 +6,17 @@
   "files": [
     "dist"
   ],
+  "keywords": [
+    "react-component",
+    "markdown",
+    "react",
+    "remarkable",
+    "editor",
+    "preview",
+    "view",
+    "textarea",
+    "md"
+  ],
   "scripts": {
     "start": "webpack-dev-server",
     "clean": "rimraf dist",
