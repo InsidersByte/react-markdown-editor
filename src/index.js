@@ -4,30 +4,28 @@ import TextArea from 'react-textarea-autosize';
 
 const imageType = /^image\//;
 const placeholderTemplate = (filename) => `![uploading ${filename}...]()`;
-const uploadedTemplate = (filename, url) => `![${filename}](${url})`;
+const uploadedTemplate = ({ filename, url }) => `![${filename}](${url})`;
 
-class MarkdownEditor extends React.Component {
-    constructor(props) {
-        super(props);
+export default class MarkdownEditor extends React.Component {
+    static propTypes = {
+        value: React.PropTypes.string.isRequired,
+        onChange: React.PropTypes.func.isRequired,
+        onImageDrop: React.PropTypes.func,
+    };
 
-        this.state = {
-            draggingOver: false,
-        };
+    state = {
+        draggingOver: false,
+    };
 
-        this.onDragEnter = this.onDragEnter.bind(this);
-        this.onDragLeave = this.onDragLeave.bind(this);
-        this.onImageDrop = this.onImageDrop.bind(this);
-    }
-
-    onDragEnter() {
+    onDragEnter = () => {
         this.setState({ draggingOver: true });
-    }
+    };
 
-    onDragLeave() {
+    onDragLeave = () => {
         this.setState({ draggingOver: false });
-    }
+    };
 
-    onImageDrop(event) {
+    onImageDrop = (event) => {
         event.preventDefault();
 
         this.setState({ draggingOver: false });
@@ -62,7 +60,7 @@ class MarkdownEditor extends React.Component {
                     }
 
                     const templateString = placeholderTemplate(filename);
-                    const uploadedString = uploadedTemplate(filename, url);
+                    const uploadedString = uploadedTemplate({ filename, url });
                     const value = this.props.value.replace(templateString, uploadedString);
 
                     this.props.onChange({
@@ -72,7 +70,7 @@ class MarkdownEditor extends React.Component {
                     });
                 });
         }
-    }
+    };
 
     render() {
         const textAreaClassName = this.state.draggingOver ? 'dragover' : null;
@@ -104,11 +102,3 @@ class MarkdownEditor extends React.Component {
         );
     }
 }
-
-MarkdownEditor.propTypes = {
-    value: React.PropTypes.string.isRequired,
-    onChange: React.PropTypes.func.isRequired,
-    onImageDrop: React.PropTypes.func,
-};
-
-export default MarkdownEditor;
