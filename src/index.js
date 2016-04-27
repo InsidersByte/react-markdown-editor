@@ -11,6 +11,11 @@ export default class MarkdownEditor extends React.Component {
         value: React.PropTypes.string.isRequired,
         onChange: React.PropTypes.func.isRequired,
         onImageDrop: React.PropTypes.func,
+        options: React.PropTypes.object,
+    };
+
+    static defaultProps = {
+        options: {},
     };
 
     state = {
@@ -73,11 +78,15 @@ export default class MarkdownEditor extends React.Component {
     };
 
     render() {
-        const textAreaClassName = this.state.draggingOver ? 'dragover' : null;
+        let textAreaClassName = 'markdown-editor__textarea';
+
+        if (this.state.draggingOver) {
+            textAreaClassName += ' markdown-editor__textarea--dragover';
+        }
 
         return (
             <div className="markdown-editor">
-                <div>
+                <div className="markdown-editor__editor-container">
                     <h2>Markdown</h2>
 
                     <TextArea
@@ -90,12 +99,13 @@ export default class MarkdownEditor extends React.Component {
                     />
                 </div>
 
-                <div>
+                <div className="markdown-editor__preview-container">
                     <h2>Preview</h2>
 
                     <MarkdownRenderer
                         className="markdown-editor__preview"
                         markdown={this.props.value}
+                        options={this.props.options}
                     />
                 </div>
             </div>

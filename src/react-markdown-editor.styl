@@ -5,24 +5,26 @@
     min-height 500px
     margin-bottom 15px
 
-    > *
-        flex 1 1 50%
-        max-width 50%
-        max-height 100%
-        margin 0 5px
-        display flex
-        flex-direction column
+.markdown-editor__editor-container
+.markdown-editor__preview-container
+    flex 1 1 50%
+    max-width 50%
+    max-height 100%
+    margin 0 5px
+    display flex
+    flex-direction column
 
-        > *:last-child
-            flex 1
+.markdown-editor__textarea
+.markdown-editor__preview
+    flex 1
 
-    .markdown-editor__preview
-        img
-            max-width 100%
+.markdown-editor__textarea--dragover
+    border 1px solid #c9ff00
+    box-shadow 0 0 10px #719ECE
 
-        :last-child
-            margin-bottom: 0;
+.markdown-editor__preview
+    img
+        max-width 100%
 
-    .dragover
-        border 1px solid #c9ff00
-        box-shadow 0 0 10px #719ECE
+    :last-child
+        margin-bottom 0
