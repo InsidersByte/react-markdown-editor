@@ -21,7 +21,7 @@ http://insidersbyte.github.io/react-markdown-editor
 npm install @insidersbyte/react-markdown-editor --save
 ```
 
-## Usage
+## Basic Usage
 
 ```js
 import React from 'react';
@@ -78,6 +78,10 @@ ReactDOM.render(<App />, document.getElementById('app'));
 * onChange (*function*) - called when a change is made (**required**)
 * onImageDrop (*function*) - called per image dropped on the textarea
 * options (*object*) - the options for remarkable (see [here](https://github.com/jonschlinkert/remarkable#options)) (default: { })
+
+## Styles
+
+You can either write your own css for this component or use the one provided. If you want to write your own look at [react-markdown-editor.styl](https://github.com/InsidersByte/react-markdown-editor/blob/master/src/react-markdown-editor.styl) for an idea on how to style this component.
 
 ## Contributing
 
