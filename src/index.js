@@ -24,9 +24,6 @@ export default class MarkdownEditor extends React.Component {
             className="markdown-editor__textarea"
             value={this.props.value}
             onChange={this.props.onChange}
-            onDrop={this.onImageDrop}
-            onDragEnter={this.onDragEnter}
-            onDragLeave={this.onDragLeave}
           />
         </div>
 
