@@ -3,7 +3,7 @@
   "private": true,
   "homepage": "https://insidersbyte.github.io/react-markdown-editor",
   "dependencies": {
-    "@insidersbyte/react-markdown-editor": "0.3.0",
+    "@insidersbyte/react-markdown-editor": "1.0.0",
     "react": "16.0.0",
     "react-dom": "16.0.0",
     "react-scripts": "1.0.14"

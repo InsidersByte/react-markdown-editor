@@ -2,12 +2,14 @@
 # yarn lockfile v1
 
 
-"@insidersbyte/react-markdown-editor@0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@insidersbyte/react-markdown-editor/-/react-markdown-editor-0.3.0.tgz#00c17840b37271f1c245b462b75b7bf8ff73a3c8"
+"@insidersbyte/react-markdown-editor@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@insidersbyte/react-markdown-editor/-/react-markdown-editor-1.0.0.tgz#37dfd2616b9448308e197445534f7e6bdb6bdcd4"
   dependencies:
+    prop-types "^15.6.0"
     react-markdown-renderer "^1.0.0"
-    react-textarea-autosize "^4.0.0"
+    react-test-renderer "^16.0.0"
+    react-textarea-autosize "^5.1.0"
 
 abab@^1.0.3:
   version "1.0.4"
@@ -5089,7 +5091,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.10, prop-types@^15.5.8, prop-types@^15.6.0:
+prop-types@^15.5.10, prop-types@^15.6.0:
   version "15.6.0"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.0.tgz#ceaf083022fc46b4a35f69e13ef75aed0d639856"
   dependencies:
@@ -5294,11 +5296,18 @@ react-scripts@1.0.14:
   optionalDependencies:
     fsevents "1.1.2"
 
-react-textarea-autosize@^4.0.0:
-  version "4.3.2"
-  resolved "https://registry.yarnpkg.com/react-textarea-autosize/-/react-textarea-autosize-4.3.2.tgz#962a52c68caceae408c18acecec29049b81e42fa"
+react-test-renderer@^16.0.0:
+  version "16.0.0"
+  resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-16.0.0.tgz#9fe7b8308f2f71f29fc356d4102086f131c9cb15"
   dependencies:
-    prop-types "^15.5.8"
+    fbjs "^0.8.16"
+    object-assign "^4.1.1"
+
+react-textarea-autosize@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/react-textarea-autosize/-/react-textarea-autosize-5.1.0.tgz#ffbf8164fce217c79443c1c17dedf730592df224"
+  dependencies:
+    prop-types "^15.5.10"
 
 react@16.0.0, "react@^15 || ^16":
   version "16.0.0"
