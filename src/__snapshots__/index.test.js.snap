@@ -1,0 +1,319 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MarkdownEditor renders correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <MarkdownEditor
+    onChange={[Function]}
+    options={Object {}}
+    value=""
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": null,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="markdown-editor__editor-container"
+        >
+          <h2>
+            Markdown
+          </h2>
+          <TextareaAutosize
+            className="markdown-editor__textarea"
+            onChange={[Function]}
+            onDragEnter={undefined}
+            onDragLeave={undefined}
+            onDrop={undefined}
+            onHeightChange={[Function]}
+            useCacheForDOMMeasurements={false}
+            value=""
+          />
+        </div>,
+        <div
+          className="markdown-editor__preview-container"
+        >
+          <h2>
+            Preview
+          </h2>
+          <MarkdownRenderer
+            className="markdown-editor__preview"
+            markdown=""
+            options={Object {}}
+          />
+        </div>,
+      ],
+      "className": "markdown-editor",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h2>
+              Markdown
+            </h2>,
+            <TextareaAutosize
+              className="markdown-editor__textarea"
+              onChange={[Function]}
+              onDragEnter={undefined}
+              onDragLeave={undefined}
+              onDrop={undefined}
+              onHeightChange={[Function]}
+              useCacheForDOMMeasurements={false}
+              value=""
+            />,
+          ],
+          "className": "markdown-editor__editor-container",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Markdown",
+            },
+            "ref": null,
+            "rendered": "Markdown",
+            "type": "h2",
+          },
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "class",
+            "props": Object {
+              "className": "markdown-editor__textarea",
+              "onChange": [Function],
+              "onDragEnter": undefined,
+              "onDragLeave": undefined,
+              "onDrop": undefined,
+              "onHeightChange": [Function],
+              "useCacheForDOMMeasurements": false,
+              "value": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h2>
+              Preview
+            </h2>,
+            <MarkdownRenderer
+              className="markdown-editor__preview"
+              markdown=""
+              options={Object {}}
+            />,
+          ],
+          "className": "markdown-editor__preview-container",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Preview",
+            },
+            "ref": null,
+            "rendered": "Preview",
+            "type": "h2",
+          },
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "function",
+            "props": Object {
+              "className": "markdown-editor__preview",
+              "markdown": "",
+              "options": Object {},
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": null,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="markdown-editor__editor-container"
+          >
+            <h2>
+              Markdown
+            </h2>
+            <TextareaAutosize
+              className="markdown-editor__textarea"
+              onChange={[Function]}
+              onDragEnter={undefined}
+              onDragLeave={undefined}
+              onDrop={undefined}
+              onHeightChange={[Function]}
+              useCacheForDOMMeasurements={false}
+              value=""
+            />
+          </div>,
+          <div
+            className="markdown-editor__preview-container"
+          >
+            <h2>
+              Preview
+            </h2>
+            <MarkdownRenderer
+              className="markdown-editor__preview"
+              markdown=""
+              options={Object {}}
+            />
+          </div>,
+        ],
+        "className": "markdown-editor",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h2>
+                Markdown
+              </h2>,
+              <TextareaAutosize
+                className="markdown-editor__textarea"
+                onChange={[Function]}
+                onDragEnter={undefined}
+                onDragLeave={undefined}
+                onDrop={undefined}
+                onHeightChange={[Function]}
+                useCacheForDOMMeasurements={false}
+                value=""
+              />,
+            ],
+            "className": "markdown-editor__editor-container",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Markdown",
+              },
+              "ref": null,
+              "rendered": "Markdown",
+              "type": "h2",
+            },
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "class",
+              "props": Object {
+                "className": "markdown-editor__textarea",
+                "onChange": [Function],
+                "onDragEnter": undefined,
+                "onDragLeave": undefined,
+                "onDrop": undefined,
+                "onHeightChange": [Function],
+                "useCacheForDOMMeasurements": false,
+                "value": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h2>
+                Preview
+              </h2>,
+              <MarkdownRenderer
+                className="markdown-editor__preview"
+                markdown=""
+                options={Object {}}
+              />,
+            ],
+            "className": "markdown-editor__preview-container",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Preview",
+              },
+              "ref": null,
+              "rendered": "Preview",
+              "type": "h2",
+            },
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "function",
+              "props": Object {
+                "className": "markdown-editor__preview",
+                "markdown": "",
+                "options": Object {},
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

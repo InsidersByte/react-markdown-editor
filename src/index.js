@@ -1,12 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import MarkdownRenderer from 'react-markdown-renderer';
 import TextArea from 'react-textarea-autosize';
 
 export default class MarkdownEditor extends React.Component {
     static propTypes = {
-        value: React.PropTypes.string.isRequired,
-        onChange: React.PropTypes.func.isRequired,
-        options: React.PropTypes.object,
+        value: PropTypes.string.isRequired,
+        onChange: PropTypes.func.isRequired,
+        options: PropTypes.object,
     };
 
     static defaultProps = {
