@@ -7,7 +7,7 @@ export default class MarkdownEditor extends React.Component {
   static propTypes = {
     value: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
-    options: PropTypes.object,
+    options: PropTypes.shape({}),
   };
 
   static defaultProps = {

@@ -1,4 +1,4 @@
 node_modules/
-build/
 coverage/
-flow-typed/
+dist/
+build/
