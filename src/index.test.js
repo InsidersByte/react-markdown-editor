@@ -5,16 +5,18 @@ import { shallow } from 'enzyme';
 import MarkdownEditor from './';
 
 describe('MarkdownEditor', () => {
-    const value = '';
-    const onChangeMock = jest.genMockFunction();
+  const value = '';
+  const onChangeMock = jest.genMockFunction();
 
-    beforeEach(() => {
-        onChangeMock.mockClear();
-    });
+  beforeEach(() => {
+    onChangeMock.mockClear();
+  });
 
-    it('renders correctly', () => {
-        const markdownEditor = shallow(<MarkdownEditor value={value} onChange={onChangeMock} />);
+  it('renders correctly', () => {
+    const markdownEditor = shallow(
+      <MarkdownEditor value={value} onChange={onChangeMock} />,
+    );
 
-        expect(markdownEditor).toMatchSnapshot();
-    });
+    expect(markdownEditor).toMatchSnapshot();
+  });
 });

@@ -1,11 +1,10 @@
 {
   "name": "@insidersbyte/react-markdown-editor",
   "version": "0.3.0",
-  "description": "React Markdown editor with preview and drag and drop image support",
+  "description":
+    "React Markdown editor with preview and drag and drop image support",
   "main": "dist/index.js",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "keywords": [
     "react-component",
     "markdown",
@@ -20,22 +19,28 @@
   "scripts": {
     "start": "webpack-dev-server",
     "clean": "rimraf dist",
-    "minify-css": "postcss -u cssnano -o dist/css/react-markdown-editor.min.css dist/css/react-markdown-editor.css",
-    "prefix-css": "postcss -u autoprefixer -o dist/css/react-markdown-editor.css dist/css/react-markdown-editor.css",
-    "build-css": "mkdirp dist/css && stylus src -o dist/css && npm run prefix-css && npm run minify-css",
+    "minify-css":
+      "postcss -u cssnano -o dist/css/react-markdown-editor.min.css dist/css/react-markdown-editor.css",
+    "prefix-css":
+      "postcss -u autoprefixer -o dist/css/react-markdown-editor.css dist/css/react-markdown-editor.css",
+    "build-css":
+      "mkdirp dist/css && stylus src -o dist/css && npm run prefix-css && npm run minify-css",
     "build": "npm run clean && babel src --out-dir dist && npm run build-css",
-    "build-pages": "npm run clean && NODE_ENV=production webpack --config ./webpack.production.config.js --progress --profile --colors",
+    "build-pages":
+      "npm run clean && NODE_ENV=production webpack --config ./webpack.production.config.js --progress --profile --colors",
     "jest": "jest --env=jsdom",
     "lint": "eslint --ignore-path .gitignore .",
     "lint-fix": "eslint --ignore-path .gitignore --fix .",
     "test": "npm run lint && npm run jest",
     "prepublish": "npm run build && npm test",
     "prepublish-pages": "npm run build-pages",
-    "publish-pages": "gh-pages -d dist"
+    "publish-pages": "gh-pages -d dist",
+    "format": "prettier --write ./*.{js,json} ./**/*.{js,json,css}"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://insidersbyte@github.com/InsidersByte/react-markdown-editor.git"
+    "url":
+      "git+https://insidersbyte@github.com/InsidersByte/react-markdown-editor.git"
   },
   "author": "Jonathon Kelly <jonathon.kelly@insidersbyte.com>",
   "license": "MIT",
@@ -76,10 +81,13 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "gh-pages": "^0.11.0",
     "html-webpack-plugin": "^2.17.0",
+    "husky": "^0.14.3",
     "jest": "^21.2.1",
+    "lint-staged": "^4.3.0",
     "mkdirp": "^0.5.1",
     "postcss-cli": "^2.5.2",
     "postcss-loader": "^0.9.1",
+    "prettier": "^1.7.4",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "rimraf": "^2.5.2",
@@ -90,10 +98,11 @@
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1"
   },
+  "lint-staged": {
+    "*.{js,json,css}": ["prettier --write", "git add"]
+  },
   "jest": {
     "collectCoverage": true,
-    "setupFiles": [
-      "./setupTests.js"
-    ]
+    "setupFiles": ["./setupTests.js"]
   }
 }
